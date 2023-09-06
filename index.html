@@ -22,7 +22,7 @@
         <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-uikit@master/jquery.sticky-kit.js"></script>
 
         <meta name="generator" content="pandoc-uikit" />
-                        <title>B.M.</title>
+                        <title>BootStrap 4.0</title>
         <style type="text/css">code{white-space: pre;}</style>
                                                        
     </head>
@@ -46,77 +46,53 @@
                 <div class="uk-width-medium-3-4">
 
                     
-<h1 id="barevné-modely">Barevné modely</h1>
+<h1 id="bootstrap-4.0">Bootstrap 4.0</h1>
 <ul>
-<li><strong>barevný model</strong> - způsob popisu barev čísly</li>
-<li><strong>rozdělení</strong>
+<li>jeden ze základních webových frameworků, jsou v něm předdefinované
+CSS třídy, které může programátor použít v HTML dokumentu, který pak
+bude vypadat dobře a bude reaktivní (přizpůsobovat se velikosti
+obrazovky/okna)</li>
+<li><strong>instalace</strong>
 <ul>
-<li>aditivní - míchání (sečtení) dvou barev produkuje světlo větší
-intenzity</li>
-<li>subtraktivní - míchání dvou barev produkuje světlomenší
-intenzity</li>
+<li><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"&gt;</code>
+do <code>&lt;head&gt;</code> pro BootStrap 4</li>
+<li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;</code>
+taky do <code>&lt;head&gt;</code> prej je to dulezity idk</li>
+<li>vsechno ze stranky <a
+href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">https://getbootstrap.com/docs/4.0/getting-started/introduction/</a></li>
 </ul></li>
-<li><strong>RGB</strong> (red green blue)
+<li><strong>principy</strong>
 <ul>
-<li>aditivní barevný model</li>
-<li>RGB(0,0,0) je černá, RGB(255,255,255) je bílá</li>
-<li>RGB jsou i pixely na displeji, z tohoto důvodu je to nejpoužívanější
-barevný model</li>
-<li>při přidání alfa kanálu vzniká RGBA</li>
+<li>jakejkoliv prvek co chci nějak stajlovat obalim do divu
+<code>HTML       &lt;div&gt;           &lt;p&gt;Odstavec o hovně&lt;/p&gt;       &lt;/div&gt;</code></li>
+<li>a k tomu divu přidám nějakou třídu z bootstrapu
+<code>HTML       &lt;div class="container-fluid"&gt;           &lt;p&gt;Odstavec o hovně&lt;/p&gt;       &lt;/div&gt;</code></li>
 </ul></li>
-<li><strong>CMYK</strong> (cyan magenta yellow blacK)
+<li>základní <strong>třídy</strong>
 <ul>
-<li>subtraktivní barevný model</li>
-<li>používaný hlavně u inkoustových tiskáren, to že mícháním dvou barev
-vzniká tmavší barva je stejný jako u míchání inkoustů a temper atd…</li>
-<li>černá poslední barva je ve CMYKu kvůli častýmu tištění černýho
-textu, kterej bude díky oddělený černý barvě levnější rychlejší
-praktičtější</li>
-</ul></li>
-<li><strong>HSB</strong> (hue, saturation, brightness)
-<ul>
-<li>hue - odstín - převládající barva</li>
-<li>saturation - sytost - je síla/sytost převládající barvy</li>
-<li>brightness - jas - množství bílého světla</li>
-<li>využívá se v některých aplikacích kde zadává barvu uživatel, protože
-zadat barvu jako odstín, sytost a jas je celkem intuitivní a jednoduchý,
-lze ho potom převézt do RGB</li>
-</ul></li>
-<li><strong>zápis</strong>
-<ul>
-<li>každá barva se dá zapsat jako uspořádaná trojice (RGB, HSB) či
-čtveřice (CMYK,RGBA)</li>
-<li>čísla v těchto trojicích a čtveřicích lze zapsat v libovolné
-soustavě, často se kromě desítkové používá šesnáctková</li>
-<li>(12, 192, 59), (0F, C9, 5B) (v 16 soustavě se často píše
-<code>#0FC95B</code>, ale znamena to to samy)</li>
-</ul></li>
-<li><strong>psychologie</strong> barev
-<ul>
-<li>teplé a studené barvy
-<ul>
-<li>nesouvisí to s matematikou ani informatikou</li>
-<li>ale i tak působí modrýa bílý odstíny studeně a žlůtý a červený
-teple</li>
-<li>pravděpodobně protože sníh a voda bejvaj studený a oheň a slunce
-teplý atd…</li>
-</ul></li>
-<li>signální barvy
-<ul>
-<li>červená znamená stop, zelená znamená volno</li>
-<li>zvolený uměle, lidma, ale tu asociaci si uděláš od mala, že červená
-je pozor</li>
-<li>značky, semafory…</li>
-</ul></li>
-</ul></li>
-<li><strong>barevná hloubka</strong> (bit depth)
-<ul>
-<li>zachycuje počet bitů potřebný pro uložení jedné barvy. Ve
-strandardním RGB, kde na každou složku připadá 1 Byte je to 3*8=24
-bitů,což je standardní barevná hloubka</li>
-<li>také zachycuje počet barev, které lze daným barevným modelem
-reprezentovat. Toto číslo je 2^(bit depth), tedy u standardního RGB
-2^24=16 mil barev.</li>
+<li>container - box okolo prvků v něm se zafixovanou šířkou</li>
+<li>container-fluid - box okolo prvků který obsahuje, šířka je celá
+obrazovka</li>
+<li>row (řádek), col (sloupec) - vytvoří tabulku
+<code>HTML           &lt;div class="row"&gt;               &lt;div class="col"&gt;1.1.&lt;/div&gt;               &lt;div class="row"&gt;1.2.&lt;/div&gt;           &lt;/div&gt;           &lt;div class="row"&gt;               &lt;div class="col"&gt;2.1.&lt;/div&gt;               &lt;div class="row"&gt;2.2.&lt;/div&gt;           &lt;/div&gt;</code></li>
+<li>align-bottom / align-top / align-bottom</li>
+<li><a
+href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp">dropdowns</a>
+- dropdown menu ze kteryho neco vyberes</li>
+<li><a
+href="https://www.w3schools.com/bootstrap/bootstrap_carousel.asp">carousels</a>-
+galerie obrazku</li>
+<li><a
+href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp">tabs</a>
+(optional)</li>
+<li><a
+href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp">navbars</a>
+- takovy to nahore kazdy stranky, slouzi k navigaci strankou</li>
+<li><a
+href="https://www.w3schools.com/bootstrap/bootstrap_tables.asp">tables</a>
+- tabulky</li>
+<li><a href="https://www.w3schools.com/tags/tag_footer.asp">footer</a> -
+zahlavi</li>
 </ul></li>
 </ul>                    
                 </div>
